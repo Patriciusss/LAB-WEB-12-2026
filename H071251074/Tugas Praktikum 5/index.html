@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Tugas Tim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8">
+  <main class="max-w-5xl mx-auto grid gap-6 md:grid-cols-3">
+
+    <!-- Daftar anggota -->
+    <section class="bg-white rounded-xl shadow p-5">
+      <h2 class="text-lg font-bold mb-3">Anggota Tim</h2>
+      <p id="status-anggota" class="text-gray-500 text-sm">Memuat anggota...</p>
+      <p id="error-anggota" class="hidden text-red-600 text-sm"></p>
+      <div id="daftar-anggota" class="flex flex-col gap-2 mt-2"></div>
+    </section>
+
+    <!-- Tugas anggota -->
+    <section class="bg-white rounded-xl shadow p-5 md:col-span-2">
+      <h2 id="judul-tugas" class="text-lg font-bold">Pilih anggota</h2>
+      <p id="progres" class="text-sm text-gray-600 mb-3"></p>
+
+      <input id="cari" type="text" placeholder="Cari judul tugas..."
+        class="w-full border rounded px-3 py-2 mb-3" />
+
+      <form id="form-tugas" class="mt-6 border-t pt-4">
+        <label for="judul-baru" class="block text-sm font-semibold mb-1">Tambah tugas baru</label>
+        <div class="flex gap-2">
+          <input id="judul-baru" type="text" placeholder="Judul tugas (min. 5 karakter)"
+            class="flex-1 border rounded px-3 py-2" />
+          <button id="tombol-simpan" type="submit"
+            class="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 disabled:opacity-50">
+            Simpan
+          </button>
+        </div>
+        <p id="error-form" class="text-red-600 text-sm mt-2"></p>
+      </form>
+
+      <p id="status-tugas" class="hidden text-gray-500 text-sm mb-2"></p>
+      <p id="error-tugas" class="hidden text-red-600 text-sm mb-2"></p>
+      <p id="pesan-kosong" class="hidden text-gray-500 text-sm mb-2">Tidak ada tugas yang cocok.</p>
+
+      <ul id="daftar-tugas" class="flex flex-col"></ul>
+
+      <!-- Form tambah tugas -->
+      
+    </section>
+  </main>
+
+  <!-- Notifikasi -->
+  <div id="notifikasi"
+    class="hidden fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
